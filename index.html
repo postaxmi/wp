@@ -1,0 +1,41 @@
+<html>
+<head>
+<script type="text/javascript" src="lib/moment.js"></script>
+<script type="text/javascript" src="lib/snap.svg.js"></script>
+<script type="text/javascript" src="lib/frappe/frappe-gantt.js"></script>
+<link type="text/css" rel="stylesheet" href="lib/frappe/frappe-gantt.css"/>
+</head>
+<body>
+<svg id="gantt"></svg>
+</body>
+<script>
+var tasks = [
+  {
+	id: 'Task 1',
+	name: 'Redesign website',
+	start: '2016-12-28',
+	end: '2016-12-31',
+	progress: 20,
+	dependencies: 'Task 2, Task 3'
+  },
+  {
+	id: 'Task 2',
+	name: 'Preapare website',
+	start: '2016-12-23',
+	end: '2016-12-25',
+	progress: 20,
+	dependencies: ''
+  },
+  {
+	id: 'Task 3',
+	name: 'Preapare website',
+	start: '2016-12-20',
+	end: '2016-12-26',
+	progress: 20,
+	dependencies: ''
+  }
+]
+var gantt = new Gantt("#gantt", tasks);
+gantt.change_view_mode('Week') // Quarter Day, Half Day, Day, Week, Month 
+</script>		
+</html>
